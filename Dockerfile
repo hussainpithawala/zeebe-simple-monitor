@@ -1,5 +1,5 @@
 FROM --platform=$TARGETPLATFORM maven:3.9.6-amazoncorretto-17 as build
-MAINTAINER kotak.com
+MAINTAINER hussainpithawala@gmail.com
 COPY --chown=mvn:mvn . /home/mvn/app
 WORKDIR /home/mvn/app
 RUN mvn package
