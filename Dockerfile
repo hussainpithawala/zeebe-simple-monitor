@@ -19,4 +19,4 @@ RUN chown -R app:app $DIRPATH/
 USER app
 
 EXPOSE 8080
-CMD ["java", "-jar","zeebe-simple-monitor-2.6.3-SNAPSHOT.jar"]
+CMD ["java", "-jar","zeebe-simple-monitor-2.7.1-SNAPSHOT.jar"]
