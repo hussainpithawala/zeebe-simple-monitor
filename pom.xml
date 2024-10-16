@@ -4,7 +4,7 @@
 
     <groupId>io.zeebe</groupId>
     <artifactId>zeebe-simple-monitor</artifactId>
-    <version>2.7.1-SNAPSHOT</version>
+    <version>2.7.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <parent>
@@ -19,13 +19,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <zeebe.version>8.3.4</zeebe.version>
-        <version.zeebe.spring>8.4.1</version.zeebe.spring>
+        <version.zeebe.spring>8.4.2</version.zeebe.spring>
         <hazelcast.exporter.version>1.4.0</hazelcast.exporter.version>
-        <redis.exporter.version>0.9.9</redis.exporter.version>
+        <redis.exporter.version>0.9.11</redis.exporter.version>
 
         <querydsl.version>5.0.0</querydsl.version>
 
-        <spring.boot.version>3.2.2</spring.boot.version>
+        <spring.boot.version>3.2.5</spring.boot.version>
         <!-- pin Hazelcast version because of spring-boot-dependencies -->
         <version.hazelcast>5.3.6</version.hazelcast>
 
@@ -140,8 +140,8 @@
         </dependency>
 
         <dependency>
-           <groupId>io.micrometer</groupId>
-           <artifactId>micrometer-registry-prometheus</artifactId>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
 
         <dependency>
@@ -203,7 +203,7 @@
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>webjars-locator</artifactId>
-            <version>0.50</version>
+            <version>0.52</version>
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
@@ -255,14 +255,14 @@
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>postgresql</artifactId>
-            <version>1.19.4</version>
+            <version>1.19.8</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>mysql</artifactId>
-            <version>1.19.4</version>
+            <version>1.19.8</version>
             <scope>test</scope>
         </dependency>
 
@@ -294,7 +294,7 @@
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.6.13</version>
+                    <version>1.7.0</version>
                 </plugin>
                 <!--Plugin for query-dsl-->
                 <plugin>
@@ -351,7 +351,7 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>3.4.0</version>
+                <version>3.4.2</version>
                 <executions>
                     <execution>
                         <phase>deploy</phase>
@@ -361,19 +361,20 @@
                     </execution>
                 </executions>
                 <configuration>
-                   <from>
-                      <image>${jib-maven-plugin.image}</image>
-                       <platforms>
-                           <platform>
-                               <architecture>amd64</architecture>
-                               <os>linux</os>
-                           </platform>
-                           <platform>
-                               <architecture>arm64</architecture>
-                               <os>linux</os>
-                           </platform>
-                       </platforms>
-                   </from>
+
+                    <from>
+                        <image>${jib-maven-plugin.image}</image>
+                        <platforms>
+                            <platform>
+                                <architecture>amd64</architecture>
+                                <os>linux</os>
+                            </platform>
+                            <platform>
+                                <architecture>arm64</architecture>
+                                <os>linux</os>
+                            </platform>
+                        </platforms>
+                    </from>
                     <to>
                         <image>ghcr.io/camunda-community-hub/zeebe-simple-monitor</image>
                         <tags>${project.version}</tags>
@@ -389,7 +390,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.6.1</version>
+                <version>3.7.1</version>
                 <executions>
                     <execution>
                         <id>copy</id>
@@ -421,7 +422,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
+                <version>3.3.1</version>
             </plugin>
 
             <plugin>
@@ -460,7 +461,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>3.1.0</version>
+                        <version>3.2.4</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -512,8 +513,10 @@
 
     <scm>
         <url>https://github.com/camunda-community-hub/zeebe-simple-monitor</url>
-        <connection>scm:git:git@github.com:camunda-community-hub/zeebe-simple-monitor.git</connection>
-        <developerConnection>scm:git:git@github.com:camunda-community-hub/zeebe-simple-monitor.git</developerConnection>
+        <connection>scm:git:git@github.com:camunda-community-hub/zeebe-simple-monitor.git
+        </connection>
+        <developerConnection>scm:git:git@github.com:camunda-community-hub/zeebe-simple-monitor.git
+        </developerConnection>
         <tag>HEAD</tag>
     </scm>
 
